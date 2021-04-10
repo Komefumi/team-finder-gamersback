@@ -1,9 +1,14 @@
 @import "variables";
+@import "common-mixins";
   
 .containment
   background-color: $darkTypeOne
   display: flex
+  max-height: $maxNavbarHeight
   padding: 0.5em
+  position: relative
+  z-index: $zIndexNavbar
+  @include bottom-shadow
 
 .navbar-nav
   display: flex
@@ -26,7 +31,6 @@
   content: ''
 
 .listed-items
-  margin-left: auto
-  list-style-type: none
+  @include reset-list
   display: flex
   content: ''
