@@ -1,0 +1,16 @@
+@import "variables";
+@import "common-mixins";
+  
+.containment
+  margin-left: $contentPush
+  grid-template-columns: repeat(4, minmax(auto, 1fr))
+  content: ''
+  display: inline-block
+
+.column
+  grid-row: span 1
+  @include flex-column-containment
+
+.feed-column
+  grid-row: span 2
+  @include flex-column-containment
