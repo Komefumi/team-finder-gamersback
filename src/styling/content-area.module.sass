@@ -2,15 +2,22 @@
 @import "common-mixins";
   
 .containment
-  margin-left: $contentPush
-  grid-template-columns: repeat(4, minmax(auto, 1fr))
+  // margin-left: $contentPush
+  max-width: 1200px
+  margin: auto
+  // grid-template-columns: repeat(4, minmax(auto, 1fr))
+  display: flex
   content: ''
-  display: inline-block
+  padding: 1.5em
 
 .column
-  grid-row: span 1
+  // grid-row: span 1
+  flex: 0 1 25%
+  padding: 0 0.5em
   @include flex-column-containment
 
 .feed-column
-  grid-row: span 2
+  // grid-row: span 2
+  flex: 0 1 50%
+  padding: 0 0.5em
   @include flex-column-containment
