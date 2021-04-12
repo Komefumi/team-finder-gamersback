@@ -17,10 +17,10 @@ export default function Sidebar() {
     <div className={containment}>
       <nav className={sidebarNav}>
         <ul className={listItems}>
-          <li><FaHome size={size} /></li>
-          <li><MdPhotoLibrary size={size} /></li>
-          <li><MdVideoLibrary size={size} /></li>
-          <li><FaUserCircle size={size} /></li>
+          <li><button><FaHome size={size} /></button></li>
+          <li><button><MdPhotoLibrary size={size} /></button></li>
+          <li><button><MdVideoLibrary size={size} /></button></li>
+          <li><button><FaUserCircle size={size} /></button></li>
         </ul>
       </nav>
     </div>
