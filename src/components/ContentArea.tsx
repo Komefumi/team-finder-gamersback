@@ -1,3 +1,5 @@
+import classnames from 'classnames';
+
 import { BiHeadphone } from 'react-icons/bi';
 import { GiGrenade } from 'react-icons/gi';
 import { BiAnchor } from 'react-icons/bi';
@@ -6,12 +8,13 @@ import { GiSplitArrows } from 'react-icons/gi';
 import { NewPostCard, GamerCard, UpcomingGamesCard, RecentlyUploadedCard } from 'components/Card';
 import playerImage from 'assets/player.jpg';
 
+import ContentAreaProps from 'types/ContentAreaProps';
 import HoldingChildrenProps from 'types/HoldingChildrenProps';
 import GamerCardProps from 'types/GamerCardProps';
 
 import contentAreaStyling from 'styling/content-area.module.sass';
 
-const { containment, column, 'feed-column': feedColumn } = contentAreaStyling;
+const { 'push-right-mode': pushRightMode, containment, column, 'feed-column': feedColumn } = contentAreaStyling;
 
 const Column = ({ children }: HoldingChildrenProps) => (
   <div className={column}>{children}</div>
@@ -40,9 +43,9 @@ const sampleUser: GamerCardProps = {
   availableForRecruitment: false,
 };
 
-export default function ContentArea() {
+export default function ContentArea({ sidebarOpen }: ContentAreaProps) {
   return (
-    <div className={containment}>
+    <div className={classnames([containment, sidebarOpen && pushRightMode])}>
       <Column>
         <GamerCard {...sampleUser} />
       </Column>

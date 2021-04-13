@@ -1,11 +1,16 @@
 @import "variables";
 @import "common-mixins";
-  
+
+.is-closed
+  transform: translateX(-100%)
+  transition: all 0.5s ease
+
 .containment
+  transition: all 0.5s ease
   background-color: $darkTypeOne
   min-height: 100vh
   content: ''
-  position: relative
+  position: fixed
   top: 0
   z-index: $zIndexSidebar
   padding: 5em 0 0

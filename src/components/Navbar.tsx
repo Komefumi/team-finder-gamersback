@@ -1,33 +1,37 @@
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { GoSearch } from 'react-icons/go';
-import { FaHome } from 'react-icons/fa';
-import { TiMessages } from 'react-icons/ti';
-import { IoIosNotificationsOutline as NotifIcon } from 'react-icons/io';
-import { BsChevronDown } from 'react-icons/bs';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GoSearch } from "react-icons/go";
+import { FaHome } from "react-icons/fa";
+import { TiMessages } from "react-icons/ti";
+import { IoIosNotificationsOutline as NotifIcon } from "react-icons/io";
+import { BsChevronDown } from "react-icons/bs";
 
-import UserImagePlaceholder from 'components/UserImagePlaceholder';
+import UserImagePlaceholder from "components/UserImagePlaceholder";
 
-import { iconSize as navIconSize } from 'config/nav';
+import NavbarProps from "types/NavbarProps";
 
-import gamersBackLogo from 'assets/gamers-back-logo.jpg';
+import { iconSize as navIconSize } from "config/nav";
 
-import navbarStyles from 'styling/navbar.module.sass';
+import gamersBackLogo from "assets/gamers-back-logo.jpg";
+
+import navbarStyles from "styling/navbar.module.sass";
 
 const {
   containment,
-  'navbar-nav': navbarNav,
-  'sidebar-icon-containment': sidebarIcon,
-  'sidebar-icon-button': sidebarIconButton,
-  'site-logo': siteLogo,
-  'search-containment': searchContainment,
-  'search-component': searchComponent,
-  'search-icon': searchIcon,
-  'search-input': searchInput,
-  'listed-items': listedItems,
-  'user-dropdown': userDropdown,
-  'greeting-and-addressing-block': greetingAndAddressingBlock,
-  'greeting-msg': greetingMsg,
-  'addressing-block': addressingBlock,
+  "navbar-nav": navbarNav,
+  "sidebar-icon-containment": sidebarIcon,
+  "sidebar-icon-button": sidebarIconButton,
+  "site-logo": siteLogo,
+  "search-containment": searchContainment,
+  "search-component": searchComponent,
+  "search-icon": searchIcon,
+  "search-input": searchInput,
+  "listed-items": listedItems,
+  "message-notifcation-containment": messageNotificationContainment,
+  "message-indicator": messageIndicator,
+  "user-dropdown": userDropdown,
+  "greeting-and-addressing-block": greetingAndAddressingBlock,
+  "greeting-msg": greetingMsg,
+  "addressing-block": addressingBlock,
 } = navbarStyles;
 
 function NavbarSearch() {
@@ -39,30 +43,49 @@ function NavbarSearch() {
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ sidebarToggler }: NavbarProps) {
   return (
     <div className={containment}>
       <nav className={navbarNav}>
         <div className={sidebarIcon}>
-          <button className={sidebarIconButton}><GiHamburgerMenu size={navIconSize} /></button>
+          <button onClick={sidebarToggler} className={sidebarIconButton}>
+            <GiHamburgerMenu size={navIconSize} />
+          </button>
         </div>
         <span className={siteLogo}>
-          <img src={gamersBackLogo} width="200px" height="auto" alt=""/>
+          <img src={gamersBackLogo} width="200px" height="auto" alt="" />
         </span>
         <div className={searchContainment}>
           <NavbarSearch />
         </div>
         <ul className={listedItems}>
-          <li><button><FaHome size={navIconSize} /></button></li>
-          <li><button><TiMessages size={navIconSize} /></button></li>
-          <li><button><NotifIcon size={navIconSize} /></button></li>
+          <li>
+            <button>
+              <FaHome size={navIconSize} />
+            </button>
+          </li>
+          <li>
+            <button>
+              <TiMessages size={navIconSize} />
+            </button>
+          </li>
+          <li className={messageNotificationContainment}>
+            <button>
+              <NotifIcon size={navIconSize} />
+              <span className={messageIndicator}>4</span>
+            </button>
+          </li>
           <li className={userDropdown}>
-            <button><UserImagePlaceholder size="33px" /></button>
+            <button>
+              <UserImagePlaceholder size="33px" />
+            </button>
             <div className={greetingAndAddressingBlock}>
               <span className={greetingMsg}>Hi,</span>
               <span className={addressingBlock}>Space COWBOY</span>
             </div>
-            <button><BsChevronDown size={navIconSize} /></button>
+            <button>
+              <BsChevronDown size={navIconSize} />
+            </button>
           </li>
         </ul>
       </nav>
