@@ -5,9 +5,11 @@
   background-color: $darkTypeOne
   display: flex
   max-height: $maxNavbarHeight
-  padding: 0.5em
-  position: relative
+  padding: 0 0
+  position: fixed
+  width: 100%
   z-index: $zIndexNavbar
+  align-items: center
   @include bottom-shadow
 
 .navbar-nav
@@ -17,20 +19,61 @@
   & > *
     flex: 0 1 auto
 
-.sidebar-icon
-  content: ''
-  width: 2em
-  height: 2em
+.sidebar-icon-containment
+  display: flex
+  align-items: center
+
+.sidebar-icon-button
+  @include make-list-compatible-button
+  padding: 0 1em
 
 .site-logo
-  content: ''
-  width: 2em
-  height: 2em
+  display: block
+  display: flex
+  align-items: center
+  margin-right: 1em
 
 .search-containment
   content: ''
+  display: flex
+  align-items: center
+
+.search-component
+  background-color: $navbarSearchColor
+  display: flex
+  align-items: center
+  border-radius: 3px 3px 3px 3px
+
+  .search-icon
+    padding: 0.5em
+
+  .search-input
+    background-color: $navbarSearchColor
+    border: none
+    padding: 0.5em
+    border-radius: 3px 3px 3px 3px
+    display: block
 
 .listed-items
   @include reset-list
+  @include items-are-flex
+  @include buttons-held-by-items-are-reset
+  margin-left: auto
   display: flex
-  content: ''
+
+  li
+    display: flex
+
+    button
+      padding: 1em
+
+.greeting-and-addressing-block
+  display: flex
+  flex-direction: column
+  justify-content: center
+  min-width: 100px
+  text-align: center
+  font-size: 0.75em
+
+.addressing-block
+  color: #888

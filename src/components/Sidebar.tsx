@@ -3,6 +3,8 @@ import { MdPhotoLibrary } from 'react-icons/md';
 import { MdVideoLibrary } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
 
+import { iconSize as navIconSize } from 'config/nav';
+
 import sidebarStyles from 'styling/sidebar.module.sass';
 
 const {
@@ -12,15 +14,14 @@ const {
 } = sidebarStyles;
 
 export default function Sidebar() {
-  const size = "1.4em"
   return (
     <div className={containment}>
       <nav className={sidebarNav}>
         <ul className={listItems}>
-          <li><button><FaHome size={size} /></button></li>
-          <li><button><MdPhotoLibrary size={size} /></button></li>
-          <li><button><MdVideoLibrary size={size} /></button></li>
-          <li><button><FaUserCircle size={size} /></button></li>
+          <li><button><FaHome size={navIconSize} /></button></li>
+          <li><button><MdPhotoLibrary size={navIconSize} /></button></li>
+          <li><button><MdVideoLibrary size={navIconSize} /></button></li>
+          <li><button><FaUserCircle size={navIconSize} /></button></li>
         </ul>
       </nav>
     </div>
