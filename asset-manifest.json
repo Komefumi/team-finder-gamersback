@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/team-finder-gamersback/static/css/main.10d312c2.chunk.css",
+    "main.js": "/team-finder-gamersback/static/js/main.f8f0c145.chunk.js",
+    "main.js.map": "/team-finder-gamersback/static/js/main.f8f0c145.chunk.js.map",
+    "runtime-main.js": "/team-finder-gamersback/static/js/runtime-main.1070b023.js",
+    "runtime-main.js.map": "/team-finder-gamersback/static/js/runtime-main.1070b023.js.map",
+    "static/js/2.89c52b76.chunk.js": "/team-finder-gamersback/static/js/2.89c52b76.chunk.js",
+    "static/js/2.89c52b76.chunk.js.map": "/team-finder-gamersback/static/js/2.89c52b76.chunk.js.map",
+    "static/js/3.a0b9b803.chunk.js": "/team-finder-gamersback/static/js/3.a0b9b803.chunk.js",
+    "static/js/3.a0b9b803.chunk.js.map": "/team-finder-gamersback/static/js/3.a0b9b803.chunk.js.map",
+    "index.html": "/team-finder-gamersback/index.html",
+    "static/css/main.10d312c2.chunk.css.map": "/team-finder-gamersback/static/css/main.10d312c2.chunk.css.map",
+    "static/js/2.89c52b76.chunk.js.LICENSE.txt": "/team-finder-gamersback/static/js/2.89c52b76.chunk.js.LICENSE.txt",
+    "static/media/g844.77a51f8c.png": "/team-finder-gamersback/static/media/g844.77a51f8c.png",
+    "static/media/gamers-back-logo.7c610c66.jpg": "/team-finder-gamersback/static/media/gamers-back-logo.7c610c66.jpg",
+    "static/media/player.d96cca8e.jpg": "/team-finder-gamersback/static/media/player.d96cca8e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1070b023.js",
+    "static/js/2.89c52b76.chunk.js",
+    "static/css/main.10d312c2.chunk.css",
+    "static/js/main.f8f0c145.chunk.js"
+  ]
+}
