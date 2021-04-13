@@ -1,5 +1,7 @@
 # Team Finder GamersBack
 
+Live Project can be accessed [here](https://komefumi.github.io/team-finder-gamersback/)
+
 Alright, this was a wonderful experience. I've implemented a very good mockup.
 
 I learned a number of things. Time management, having some enjoyment through coding, what I need to improve, and what my optimal way of working might be.
