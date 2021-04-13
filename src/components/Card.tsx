@@ -1,5 +1,5 @@
 import autosize from "autosize";
-import { useRef, useEffect, useState, RefObject } from "react";
+import { useRef, useEffect, useState } from "react";
 import classnames from "classnames";
 
 import UserImagePlaceholder from "components/UserImagePlaceholder";
@@ -121,7 +121,7 @@ export function NewPostCard(props: NewPostCardProps) {
 
     return () => {
       if (isTextAreaAutosized && inputArea.current)
-        autosize.destroy((inputArea.current as unknown) as HTMLInputElement);
+        autosize.destroy((inputArea.current as unknown) as HTMLInputElement); // eslint-disable-line react-hooks/exhaustive-deps
     };
   }, [inputArea, isTextAreaAutosized, setIsTextAreaAutosized]);
 
