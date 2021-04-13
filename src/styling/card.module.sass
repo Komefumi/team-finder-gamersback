@@ -3,16 +3,25 @@
 
 .card-structure, .gamer-card-structure
   background-color: $cardPanelColor
-  border-radius: 5%
+  border-radius: 1em
   @mixin surround-shadow
-  // width: 300px
     padding: 0em
 
 .card-header
   padding: 0
+  position: relative
+
+.orange-left-piece
+  position: absolute
+  top: -0.25em
+  left: 0
+  height: 70%
+  border: 3px solid $teamOrange
+  border-radius: 3px 3px 3px 3px
 
 .card-header-rule
-  width: 93.5%
+  width: 92.5%
+  margin-left: 0.5em
   border: 0
   height: 1px
   background-color: $darkTypeTwo
@@ -23,15 +32,53 @@
 
 .card-body
   padding: 0.5em 1em
+  line-height: 1.5
 
-// Gamer Card
+.post-body
+  display: flex
+
+.post-body-left
+  flex: 1 1 15%
+  display: flex
+  justify-content: center
+  align-items: center
+  > *
+    margin-top: -0.75em
+
+.post-body-right
+  flex: 1 1 85%
+
+.post-body-text-writer
+  background-color: $newPostTextAreaColor
+  resize: none
+  width: 100%
+  border: none
+  border-radius: 2em 2em 2em 2em
+  padding: 1em
+  max-height: 50px
+  line-height: 1.5
+  // @include add-styled-scroll
+  scrollbar-width: thin
+  scrollbar-color: $teamOrange #444
+  &::-webkit-scrollbar-track
+    background: #444
+  &::-webkit-scrollbar-thumb
+    background-color: $teamOrange
+    border-radius: 20px
+    border: 3px solid $teamOrange
+
+.upcoming-games-card-body
+  min-height: 200px
+
 .gamer-card-structure
   border: 2px solid $teamOrange
+  height: 500px
 
 .gamer-card-front-face
   display: flex
   flex-direction: column
-  min-height: 100%
+  justify-content: stretch
+  height: 100%
 
 .display-picture-space
   width: 100%
@@ -42,11 +89,25 @@
   .display-picture
     width: 100%
     height: auto
-    border-radius: 5.5%
+    border-radius: 1em
 
 .display-name-space
   flex: 1 0 5%
-  border: 1px solid $teamOrange
+  border-top: 1px solid $darkTypeTwo
+  border-bottom: 1px solid $darkTypeTwo
+  position: relative
+
+.display-name-left-piece, .display-name-right-piece
+  position: absolute
+  border: 2px solid $teamOrange
+  height: 100%
+
+.display-name-left-piece
+  left: 0
+
+.display-name-right-piece
+  right: 0
+  top: 0
 
 .display-name
   margin: 0
@@ -57,8 +118,7 @@
 .gamer-stats-space
   flex: 1 0 35%
   font-weight: bold
-  // font-family: sans-serif
-  font-size: 0.85em
+  font-size: 0.8em
   padding-top: 0.5em
   padding-bottom: 2.5em
 
@@ -68,10 +128,10 @@
   padding: 0.25em 1em
 
 .gamer-stat-label
-  flex: 0 0 30%
+  flex: 0 0 20%
 
 .gamer-stat-values
-  flex: 0 0 70%
+  flex: 0 0 80%
 
 .gamer-state-label, .gamer-stat-values
   padding: 0.25em
@@ -82,7 +142,7 @@
   padding: 0
 
 .gamer-role-item
-  flex: 0 1 15%
+  flex: 0 1 10%
   display: flex
   flex-direction: column
   align-items: center
@@ -99,18 +159,66 @@
 
 .face-switcher-space
   flex: 0 0 5%
+  display: flex
+  justify-content: center
+  overflow: hidden
+  justify-self: flex-end
+  margin-top: auto
+
+.face-switch-button
+  @include make-list-compatible-button
+  background-color: $teamOrange
+  width: 90px
+  height: 40px
+  border-radius: 50% 50% 0 0
+  display: flex
+  justify-content: center
+
+.gamer-card-front-face .face-switcher-space
+  @media screen and (max-width: $mobileBreakpoint)
+    transform: translateY(-47.5%)
+
+
+.gamer-card-front-face .face-switch-button
+  transform: translateY(15%)
+
+.gamer-card-back-face .face-switch-button
+  transform: translateY(55%)
+
+.switch-orb
+  background-color: #eee
+  display: block
+  border-radius: 50%
+  height: 10px
+  width: 10px
+  transform: translateY(5px)
+
+.switch-orb:first-child
+  margin-right: 1em
+
+.active-switch-orb
+  height: 12px
+  width: 12px
 
 .gamer-card-back-face
   display: flex
   flex-direction: column
-  padding: 1.5em 1em
+  padding: 1.5em 1em 0
   min-height: 100%
 
 .language-space
   flex: 0 0 20%
+  min-height: 100px
 
 .achievements-space
   flex: 0 0 10%
+  min-height: 70px
 
 .recruitment-details-space
   flex: 0 0 10%
+
+.language-space, .achievements-space, .recruitment-details-space
+  // padding: 1em 1.5em 0
+  & > h5
+    font-weight: bold
+    font-size: 0.9em

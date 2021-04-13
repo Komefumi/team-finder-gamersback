@@ -1,10 +1,9 @@
-@import "variables";
-@import "common-mixins";
-  
+@import "variables"
+@import "common-mixins"
+
 .containment
   background-color: $darkTypeOne
   display: flex
-  max-height: $maxNavbarHeight
   padding: 0 0
   position: fixed
   width: 100%
@@ -34,7 +33,6 @@
   margin-right: 1em
 
 .search-containment
-  content: ''
   display: flex
   align-items: center
 
@@ -77,3 +75,17 @@
 
 .addressing-block
   color: #888
+
+@media screen and (max-width: $navBreakpoint)
+  .site-logo
+  .search-containment
+    margin-right: 0.1em
+  .navbar-nav
+    flex-wrap: wrap
+  .listed-items
+
+@media screen and (max-width: $secondNavBreakpoint)
+  .site-logo
+    margin-right: 0.1em
+  .search-containment
+    margin-right: 0.1em
