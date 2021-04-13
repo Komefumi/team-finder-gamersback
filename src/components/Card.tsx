@@ -6,6 +6,8 @@ import UserImagePlaceholder from "components/UserImagePlaceholder";
 
 import HoldingChildrenProps from "types/HoldingChildrenProps";
 import StandardCardProps from "types/StandardCardProps";
+import CardHeaderProps from "types/CardHeaderProps";
+import CardHeaderLeftPieceTypeEnum from "types/CardHeaderLeftPieceTypeEnum";
 import GamerCardProps from "types/GamerCardProps";
 import NewPostCardProps from "types/NewPostCardProps";
 import CardFacesEnum from "types/CardFacesEnum";
@@ -16,9 +18,12 @@ const {
   "card-structure": cardStructure,
   "card-header": cardHeader,
   "orange-left-piece": orangeLeftPiece,
+  "lighter-orange-left-piece": lighterOrangeLeftPiece,
   "card-header-rule": cardHeaderRule,
   "card-title": cardTitle,
   "card-body": cardBody,
+  "post-card": postCard,
+  "post-card-upper-light-stroke": postCardUpperLightStroke,
   "post-body": postBody,
   "post-body-left": postBodyLeft,
   "post-body-right": postBodyRight,
@@ -27,6 +32,7 @@ const {
   "gamer-card-structure": gamerCardStructure,
   "gamer-card-front-face": gamerCardFrontFace,
   "gamer-card-back-face": gamerCardBackFace,
+  "back-face-orange-piece": backFaceOrangePiece,
   "display-picture-space": displayPictureSpace,
   "display-picture": displayPicture,
   "display-name-space": displayNameSpace,
@@ -56,10 +62,14 @@ export function CardStructure({ children }: HoldingChildrenProps) {
   return <div className={cardStructure}>{children}</div>;
 }
 
-export function CardHeader({ children }: HoldingChildrenProps) {
+export function CardHeader({ leftPieceToUse, children }: CardHeaderProps) {
+  const leftPieceClass =
+    leftPieceToUse === CardHeaderLeftPieceTypeEnum.LIGHTER
+      ? lighterOrangeLeftPiece
+      : orangeLeftPiece;
   return (
     <header className={cardHeader}>
-      <div className={orangeLeftPiece} />
+      <div className={leftPieceClass} />
       {children}
       <hr className={cardHeaderRule} />
     </header>
@@ -88,7 +98,7 @@ export default function StandardCard({ title, children }: StandardCardProps) {
 export function UpcomingGamesCard() {
   return (
     <CardStructure>
-      <CardHeader>
+      <CardHeader leftPieceToUse={CardHeaderLeftPieceTypeEnum.LIGHTER}>
         <CardTitle>Upcoming Games</CardTitle>
       </CardHeader>
       <div className={classnames([cardBody, upcomingGamesCardBody])}></div>
@@ -99,7 +109,7 @@ export function UpcomingGamesCard() {
 export function RecentlyUploadedCard() {
   return (
     <CardStructure>
-      <CardHeader>
+      <CardHeader leftPieceToUse={CardHeaderLeftPieceTypeEnum.LIGHTER}>
         <CardTitle>Recently Uploaded</CardTitle>
       </CardHeader>
       <div className={cardBody}></div>
@@ -126,7 +136,7 @@ export function NewPostCard(props: NewPostCardProps) {
   }, [inputArea, isTextAreaAutosized, setIsTextAreaAutosized]);
 
   return (
-    <CardStructure>
+    <div className={classnames([cardStructure, postCard])}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
@@ -146,7 +156,8 @@ export function NewPostCard(props: NewPostCardProps) {
           </div>
         </div>
       </CardBody>
-    </CardStructure>
+      <div className={postCardUpperLightStroke} />
+    </div>
   );
 }
 
@@ -231,6 +242,7 @@ export function GamerCard({
               <span className={classnames([switchOrb, activeSwitchOrb])} />
             </button>
           </div>
+          <div className={backFaceOrangePiece} />
         </div>
       )}
     </div>

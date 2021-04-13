@@ -11,13 +11,18 @@
   padding: 0
   position: relative
 
-.orange-left-piece
+.orange-left-piece, .lighter-orange-left-piece
   position: absolute
   top: -0.25em
   left: 0
   height: 70%
+
+.orange-left-piece
   border: 3px solid $teamOrange
   border-radius: 3px 3px 3px 3px
+
+.lighter-orange-left-piece
+  border: 3px solid $lighterTeamOrange
 
 .card-header-rule
   width: 92.5%
@@ -33,6 +38,16 @@
 .card-body
   padding: 0.5em 1em
   line-height: 1.5
+
+.post-card
+  position: relative
+
+.post-card-upper-light-stroke
+  position: absolute
+  border: 0.5px solid $darkTypeTwo
+  top: 0
+  left: 10%
+  width: 80%
 
 .post-body
   display: flex
@@ -185,6 +200,7 @@
 .gamer-card-back-face .face-switch-button
   transform: translateY(55%)
 
+
 .switch-orb
   background-color: #eee
   display: block
@@ -205,6 +221,15 @@
   flex-direction: column
   padding: 1.5em 1em 0
   min-height: 100%
+  position: relative
+
+.back-face-orange-piece
+  position: absolute
+  right: -0em
+  height: 15%
+  top: 40%
+  border: 3px solid $teamOrange
+  border-radius: 3px 3px 3px 3px
 
 .language-space
   flex: 0 0 20%
