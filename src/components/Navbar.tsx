@@ -64,15 +64,15 @@ export default function Navbar({ sidebarToggler }: NavbarProps) {
               <FaHome size={navIconSize} />
             </button>
           </li>
-          <li>
-            <button>
-              <TiMessages size={navIconSize} />
-            </button>
-          </li>
           <li className={messageNotificationContainment}>
             <button>
-              <NotifIcon size={navIconSize} />
+              <TiMessages size={navIconSize} />
               <span className={messageIndicator}>4</span>
+            </button>
+          </li>
+          <li>
+            <button>
+              <NotifIcon size={navIconSize} />
             </button>
           </li>
           <li className={userDropdown}>
