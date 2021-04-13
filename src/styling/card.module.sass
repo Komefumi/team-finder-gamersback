@@ -74,9 +74,9 @@
   line-height: 1.5
   // @include add-styled-scroll
   scrollbar-width: thin
-  scrollbar-color: $teamOrange #444
+  scrollbar-color: $teamOrange $midDark
   &::-webkit-scrollbar-track
-    background: #444
+    background: $midDark
   &::-webkit-scrollbar-thumb
     background-color: $teamOrange
     border-radius: 20px
@@ -87,7 +87,7 @@
 
 .gamer-card-structure
   border: 2px solid $teamOrange
-  height: 500px
+  min-height: 500px
 
 .gamer-card-front-face
   display: flex
@@ -98,7 +98,7 @@
 .display-picture-space
   width: 100%
   flex: 1 0 auto
-  max-height: 55%
+  height: auto
   overflow: hidden
 
   .display-picture
@@ -189,20 +189,19 @@
   display: flex
   justify-content: center
 
-.gamer-card-front-face .face-switcher-space
-  @media screen and (max-width: $mobileBreakpoint)
-    transform: translateY(-47.5%)
-
-
 .gamer-card-front-face .face-switch-button
-  transform: translateY(15%)
+  transform: translateY(14.5%)
+
+@media screen and (max-width: $mobileBreakpoint)
+  .gamer-card-front-face .face-switch-button
+    transform: translateY(50%)
 
 .gamer-card-back-face .face-switch-button
-  transform: translateY(55%)
+  transform: translateY(50%)
 
 
 .switch-orb
-  background-color: #eee
+  background-color: $lightTypeOne
   display: block
   border-radius: 50%
   height: 10px
@@ -243,7 +242,6 @@
   flex: 0 0 10%
 
 .language-space, .achievements-space, .recruitment-details-space
-  // padding: 1em 1.5em 0
   & > h5
     font-weight: bold
     font-size: 0.9em

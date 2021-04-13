@@ -9,7 +9,7 @@
   box-shadow: none
   width: 100%
   height: 100%
-  color: #ddd
+  color: $lightTypeTwo
   cursor: pointer
 
 @mixin reset-list
@@ -19,9 +19,9 @@
 
 @mixin add-styled-scroll
   scrollbar-width: thin
-  scrollbar-color: $teamOrange #444
+  scrollbar-color: $teamOrange $midDark
   &::-webkit-scrollbar-track
-    background: #444
+    background: $midDark
   &::-webkit-scrollbar-thumb
     background-color: $teamOrange
     border-radius: 20px
