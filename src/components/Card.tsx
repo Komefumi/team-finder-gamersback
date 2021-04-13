@@ -17,6 +17,9 @@ import cardStyling from "styling/card.module.sass";
 const {
   "card-structure": cardStructure,
   "card-header": cardHeader,
+  "recently-uploaded-card-header": recentlyUploadedCardHeader,
+  "recently-uploaded-card-body": recentlyUploadedCardBody,
+  "view-all-link": viewAllLink,
   "orange-left-piece": orangeLeftPiece,
   "lighter-orange-left-piece": lighterOrangeLeftPiece,
   "card-header-rule": cardHeaderRule,
@@ -109,10 +112,13 @@ export function UpcomingGamesCard() {
 export function RecentlyUploadedCard() {
   return (
     <CardStructure>
-      <CardHeader leftPieceToUse={CardHeaderLeftPieceTypeEnum.LIGHTER}>
-        <CardTitle>Recently Uploaded</CardTitle>
-      </CardHeader>
-      <div className={cardBody}></div>
+      <div className={classnames([cardHeader, recentlyUploadedCardHeader])}>
+        <div className={lighterOrangeLeftPiece} />
+        <h3 className={cardTitle}>Recently Uploaded</h3>
+        <span className={viewAllLink}>View All</span>
+        <hr className={cardHeaderRule} />
+      </div>
+      <div className={classnames([cardBody, recentlyUploadedCardBody])}></div>
     </CardStructure>
   );
 }
