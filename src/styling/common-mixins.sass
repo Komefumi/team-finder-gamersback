@@ -17,6 +17,17 @@
   padding: 0
   list-style: none
 
+@mixin add-styled-scroll
+  scrollbar-width: thin
+  scrollbar-color: $teamOrange #444
+  &::-webkit-scrollbar-track
+    background: #444
+  &::-webkit-scrollbar-thumb
+    background-color: $teamOrange
+    border-radius: 20px
+    border: 3px solid $teamOrange
+
+
 @mixin items-are-flex
   & > li
     display: flex
