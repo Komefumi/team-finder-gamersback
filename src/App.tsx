@@ -2,6 +2,8 @@ import Navbar from 'components/Navbar';
 import Sidebar from 'components/Sidebar';
 import ContentArea from 'components/ContentArea';
 
+import 'styling/main.sass';
+
 import main from 'styling/main.module.sass';
 const { 'sidebar-and-content-wrapper': sidebarAndContentWrapper } = main;
 
