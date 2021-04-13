@@ -3,7 +3,7 @@ import { GiGrenade } from 'react-icons/gi';
 import { BiAnchor } from 'react-icons/bi';
 import { GiSplitArrows } from 'react-icons/gi';
 
-import StandardCard, { NewPostCard, GamerCard } from 'components/Card';
+import { NewPostCard, GamerCard, UpcomingGamesCard, RecentlyUploadedCard } from 'components/Card';
 import playerImage from 'assets/player.jpg';
 
 import HoldingChildrenProps from 'types/HoldingChildrenProps';
@@ -21,6 +21,8 @@ const FeedColumn = ({ children }: HoldingChildrenProps) => (
   <div className={feedColumn}>{children}</div>
 );
 
+const size = "1.5em";
+
 const sampleUser: GamerCardProps = {
   profilePictureSrc: playerImage,
   name: 'Gaming Name',
@@ -29,10 +31,10 @@ const sampleUser: GamerCardProps = {
     team: undefined,
     rank: 'Diamond II',
     roles: [
-      { name: 'support', RenderGraphic: () => <BiHeadphone size={"1.25em"} /> },
-      { name: 'flagger', RenderGraphic: () => <GiGrenade size={"1.25em"} /> },
-      { name: 'Anchor', RenderGraphic: () => <BiAnchor size={"1.25em"} /> },
-      { name: 'Flex', RenderGraphic: () => <GiSplitArrows size={"1.25em"} /> }
+      { name: 'support', RenderGraphic: () => <BiHeadphone size={size} /> },
+      { name: 'flagger', RenderGraphic: () => <GiGrenade size={size} /> },
+      { name: 'Anchor', RenderGraphic: () => <BiAnchor size={size} /> },
+      { name: 'Flex', RenderGraphic: () => <GiSplitArrows size={size} /> }
     ],
   },
   availableForRecruitment: false,
@@ -48,12 +50,8 @@ export default function ContentArea() {
         <NewPostCard />
       </FeedColumn>
       <Column>
-        <StandardCard title="Standard Card, Placeholder, Dummy">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia libero nam quasi sed esse dignissimos eveniet necessitatibus ipsam vel impedit quos, deleniti consectetur dolorem eos totam laboriosam temporibus vitae dolorum!
-        </StandardCard>
-        <StandardCard title="Standard Card, Placeholder, Dummy">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia libero nam quasi sed esse dignissimos eveniet necessitatibus ipsam vel impedit quos, deleniti consectetur dolorem eos totam laboriosam temporibus vitae dolorum!
-        </StandardCard>
+        <UpcomingGamesCard />
+        <RecentlyUploadedCard />
       </Column>
     </div>
   );
